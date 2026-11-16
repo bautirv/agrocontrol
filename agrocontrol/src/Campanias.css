@@ -1,0 +1,820 @@
+.campanias-cabecera {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.agregar {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--acento);
+  color: var(--acento-texto);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.agregar:hover {
+  opacity: 0.88;
+}
+
+.agregar:active {
+  transform: scale(0.97);
+}
+
+.subtitulo {
+  margin: 2.25rem 0 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--suave);
+}
+
+.centrado {
+  text-align: center;
+}
+
+/* Cuadrados de campañas */
+.campanias-grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.campania {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-height: 190px;
+  padding: 1.5rem 1.35rem;
+  background: var(--barra);
+  border: 1px solid var(--borde);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px var(--sombra);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.campania:hover,
+.campania:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px var(--sombra);
+  border-color: var(--acento);
+  outline: none;
+}
+
+.campania-periodo {
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--acento);
+}
+
+.campania-nombre {
+  margin: 0;
+  font-family: 'Cifras', Georgia, 'Times New Roman', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--texto);
+  /* un nombre largo o sin espacios baja de renglón en vez de salirse de la caja */
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.campania-datos {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: auto 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--borde);
+}
+
+.campania-datos div {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.campania-datos dt {
+  color: var(--suave);
+}
+
+.campania-datos dd {
+  margin: 0;
+  color: var(--texto);
+}
+
+.campanias-grilla.antiguas {
+  margin-top: 1rem;
+}
+
+.campanias-grilla.antiguas .campania {
+  opacity: 0.8;
+}
+
+/* Desplegable */
+.desplegable {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  margin-top: 2.5rem;
+  padding: 0.9rem 0;
+  border: none;
+  border-top: 1px solid var(--borde);
+  background: transparent;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.95rem;
+  color: var(--texto);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.desplegable:hover {
+  color: var(--acento);
+}
+
+.desplegable-cuenta {
+  padding: 0.1rem 0.55rem;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: var(--suave);
+}
+
+.flecha {
+  width: 8px;
+  height: 8px;
+  margin: 0 0.25rem 3px auto;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+}
+
+.flecha.abierta {
+  margin-bottom: -3px;
+  transform: rotate(-135deg);
+}
+
+/* ---------- Pantallas de detalle ---------- */
+/* Botón de volver a la izquierda */
+.volver {
+  display: block;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.88rem;
+  color: var(--acento);
+  cursor: pointer;
+}
+
+.volver:hover {
+  text-decoration: underline;
+}
+
+/* "Campaña" y el título, centrados */
+.encabezado-detalle {
+  text-align: center;
+}
+
+/* Caja de información, centrada */
+.info {
+  max-width: 560px;
+  margin: 1.75rem auto 0;
+  padding: 1.5rem 1.75rem;
+  background: var(--barra);
+  border: 1px solid var(--borde);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px var(--sombra);
+}
+
+.detalle {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.detalle div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--borde);
+  font-size: 0.92rem;
+}
+
+.detalle dt {
+  color: var(--suave);
+}
+
+.detalle dd {
+  margin: 0;
+  text-align: right;
+}
+
+.detalle-obs {
+  margin-top: 1.25rem;
+}
+
+.detalle-obs span {
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--suave);
+}
+
+.detalle-obs p {
+  margin: 0.4rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+/* Cuadrados de campos usados (centrados, debajo de la información) */
+.campos-grilla {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.campo-cuadro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  width: 190px;
+  height: 160px;
+  padding: 1rem;
+  background: var(--barra);
+  border: 1px solid var(--borde);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px var(--sombra);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  text-align: center;
+  color: var(--texto);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.campo-cuadro:hover,
+.campo-cuadro:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px var(--sombra);
+  border-color: var(--acento);
+  outline: none;
+}
+
+.campo-nombre {
+  font-family: 'Cifras', Georgia, 'Times New Roman', serif;
+  font-size: 1.2rem;
+}
+
+.campo-ha {
+  font-size: 0.85rem;
+  color: var(--suave);
+}
+
+/* ---------- Secciones de un lote ---------- */
+.secciones-grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.25rem;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.seccion-cuadro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  min-height: 190px;
+  padding: 1.5rem 1.35rem 1.25rem;
+  background: transparent;
+  border: 1px solid var(--borde);
+  border-radius: 18px;
+  box-shadow: none;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  text-align: left;
+  color: var(--texto);
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.seccion-cuadro:hover,
+.seccion-cuadro:focus-visible {
+  transform: translateY(-2px);
+  border-color: var(--acento);
+  outline: none;
+}
+
+/* Numeración sutil en lugar del ícono */
+.seccion-indice {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+  font-family: 'Cifras', Georgia, 'Times New Roman', serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: var(--acento);
+}
+
+.seccion-indice::after {
+  content: '';
+  width: 1.5rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+  transition: width 0.25s, opacity 0.25s;
+}
+
+.seccion-cuadro:hover .seccion-indice::after,
+.seccion-cuadro:focus-visible .seccion-indice::after {
+  width: 2.6rem;
+  opacity: 1;
+}
+
+.seccion-nombre {
+  font-family: 'Cifras', Georgia, 'Times New Roman', serif;
+  font-size: 1.3rem;
+}
+
+.seccion-detalle {
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--suave);
+}
+
+.seccion-pie {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--borde);
+  font-size: 0.82rem;
+}
+
+.seccion-cuenta {
+  color: var(--acento);
+}
+
+.seccion-flecha {
+  color: var(--suave);
+  transition: transform 0.2s, color 0.2s;
+}
+
+.seccion-cuadro:hover .seccion-flecha,
+.seccion-cuadro:focus-visible .seccion-flecha {
+  transform: translateX(4px);
+  color: var(--acento);
+}
+
+.seccion-tabla {
+  margin-top: 2rem;
+}
+
+/* ---------- Caja modal (formulario) ---------- */
+.modal-fondo {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: rgba(15, 25, 15, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: aparecer 0.15s ease-out;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2.25rem 2rem 2rem;
+  background: var(--barra);
+  color: var(--texto);
+  border: 1px solid var(--borde);
+  border-radius: 22px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+  animation: subir 0.2s ease-out;
+}
+
+.modal-x {
+  position: absolute;
+  top: 0.9rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  font-family: system-ui, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--suave);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.modal-x:hover {
+  background: var(--borde);
+  color: var(--texto);
+}
+
+.modal-titulo {
+  margin: 0.3rem 0 1.5rem;
+  font-family: 'Cifras', Georgia, 'Times New Roman', serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+/* Formulario */
+.campo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.campo-fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.campo-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--suave);
+}
+
+.campo-form input[type='text'],
+.campo-form input[type='number'],
+.campo-form input[type='date'],
+.campo-form input[type='time'],
+.campo-form select,
+.campo-form textarea {
+  width: 100%;
+  padding: 0.5rem 0;
+  border: none;
+  border-bottom: 1px solid var(--borde);
+  border-radius: 0;
+  background: transparent;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.95rem;
+  color: var(--texto);
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.campo-form select option {
+  background: var(--barra);
+  color: var(--texto);
+}
+
+.campo-form input:focus,
+.campo-form select:focus,
+.campo-form textarea:focus {
+  border-bottom-color: var(--acento);
+}
+
+.campo-form .campo-check {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--texto);
+}
+
+.campo-check input {
+  accent-color: var(--acento);
+}
+
+.campo-error {
+  margin: 0;
+  font-size: 0.82rem;
+  text-align: center;
+  color: #c0584d;
+}
+
+.campo-guardar {
+  margin-top: 0.25rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 12px;
+  background: var(--acento);
+  color: var(--acento-texto);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.campo-guardar:hover {
+  opacity: 0.88;
+}
+
+.campo-guardar:active {
+  transform: scale(0.98);
+}
+
+@keyframes aparecer {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes subir {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .campo-fila {
+    grid-template-columns: 1fr;
+  }
+  .modal {
+    padding: 2rem 1.35rem 1.5rem;
+  }
+}
+
+/* ---------- Botones de acción y filas extra de los formularios ---------- */
+.acciones-centro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.subtitulo + .acciones-centro {
+  margin-top: -0.6rem;
+}
+
+.agregar.secundario {
+  background: transparent;
+  color: var(--acento);
+  border: 1px solid var(--acento);
+}
+
+.campo-fila.tres {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.filas-extra {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1rem 1rem 0.9rem;
+  border: 1px solid var(--borde);
+  border-radius: 14px;
+}
+
+.filas-titulo {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--suave);
+}
+
+.fila-producto,
+.fila-camion {
+  position: relative;
+  display: grid;
+  gap: 0.8rem;
+  align-items: end;
+  padding-right: 1.6rem;
+}
+
+.fila-producto { grid-template-columns: 1.6fr 1fr; }
+.fila-camion { grid-template-columns: 1fr 1fr 1.2fr; }
+
+.fila-quitar {
+  position: absolute;
+  bottom: 0.3rem;
+  right: -0.1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: var(--suave);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.fila-quitar:hover {
+  background: var(--borde);
+  color: var(--texto);
+}
+
+.link-agregar {
+  align-self: flex-start;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.85rem;
+  color: var(--acento);
+  cursor: pointer;
+}
+
+.link-agregar:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .campo-fila.tres,
+  .fila-producto,
+  .fila-camion {
+    grid-template-columns: 1fr;
+  }
+}
+
+.campo-form .ayuda {
+  margin: -0.4rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--suave);
+}
+
+/* ---------- Selector propio (desplegable de los formularios) ---------- */
+.campo-select {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.campo-select-etiqueta {
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--suave);
+}
+
+.campo-select-boton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0;
+  border: none;
+  border-bottom: 1px solid var(--borde);
+  border-radius: 0;
+  background: transparent;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.95rem;
+  text-align: left;
+  color: var(--texto);
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.campo-select-boton.vacio {
+  color: var(--suave);
+}
+
+.campo-select-boton:focus-visible,
+.campo-select.abierto .campo-select-boton {
+  border-bottom-color: var(--acento);
+  outline: none;
+}
+
+.campo-select-flecha {
+  flex: none;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-bottom: 3px;
+  border-right: 2px solid var(--suave);
+  border-bottom: 2px solid var(--suave);
+  transform: rotate(45deg);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.campo-select.abierto .campo-select-flecha {
+  margin-bottom: -3px;
+  border-color: var(--acento);
+  transform: rotate(-135deg);
+}
+
+.campo-select-lista {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  left: 0;
+  right: 0;
+  z-index: 5;
+  max-height: 17rem;
+  margin: 0;
+  padding: 0.35rem;
+  overflow-y: auto;
+  list-style: none;
+  background: var(--barra);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px var(--sombra);
+  animation: aparecer 0.12s ease-out;
+}
+
+.campo-select-opcion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.65rem;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  color: var(--texto);
+  cursor: pointer;
+}
+
+.campo-select-opcion.resaltada {
+  background: color-mix(in srgb, var(--acento) 14%, transparent);
+}
+
+.campo-select-opcion[aria-selected='true'] {
+  font-weight: 600;
+  color: var(--acento);
+}
+
+.campo-select-opcion[aria-selected='true']::after {
+  content: '✓';
+  font-size: 0.85rem;
+}
+
+.campo-guardar:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* ---------- Editar y borrar ---------- */
+.acciones-cabecera {
+  margin: 1.4rem 0 2rem;
+}
+
+.agregar.peligro {
+  background: transparent;
+  color: #c0584d;
+  border: 1px solid #c0584d;
+}
+
+[data-tema='oscuro'] .agregar.peligro {
+  color: #e48b82;
+  border-color: #e48b82;
+}
+
+.campo-guardar.peligro {
+  background: #c0584d;
+  color: #fff;
+}
+
+.confirmar-texto {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--texto);
+}
+
+.acciones-fila {
+  display: flex;
+  gap: 0.9rem;
+  white-space: nowrap;
+}
+
+.link-agregar.peligro {
+  color: #c0584d;
+}
+
+[data-tema='oscuro'] .link-agregar.peligro {
+  color: #e48b82;
+}
