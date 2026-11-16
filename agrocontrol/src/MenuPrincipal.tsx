@@ -143,16 +143,16 @@ export default function MenuPrincipal({ usuario, esAdmin, onSalir }: Props) {
                 <span className="atajo-titulo">Campañas</span>
                 <span className="atajo-texto">Campos, lotes, labores, riegos, aplicaciones y cosechas.</span>
               </button>
+              <button type="button" className="atajo" onClick={() => setVista('stock')}>
+                <span className="atajo-titulo">Stock de productos</span>
+                <span className="atajo-texto">Qué hay disponible y qué conviene reponer.</span>
+              </button>
               {esAdmin && (
                 <button type="button" className="atajo" onClick={() => setVista('usuarios')}>
                   <span className="atajo-titulo">Usuarios</span>
                   <span className="atajo-texto">Editar cuentas, cambiar roles y dar de baja.</span>
                 </button>
               )}
-              <button type="button" className="atajo" onClick={() => setVista('stock')}>
-                <span className="atajo-titulo">Stock de productos</span>
-                <span className="atajo-texto">Qué hay disponible y qué conviene reponer.</span>
-              </button>
             </div>
           </>
         )}
